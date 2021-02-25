@@ -1,0 +1,55 @@
+#
+# 2 User trying to book 2 different flights.
+#
+# user 1
+create user1 user1 100000
+login user1 user1
+search "Seattle WA" "Boston MA" 1 1 1
+book 0
+quit
+*
+#
+# expected printouts for user 1
+#
+Created user user1
+Logged in as user1
+Itinerary 0: 1 flight(s), 297 minutes
+ID: 60454 Day: 1 Carrier: AS Number: 24 Origin: Seattle WA Dest: Boston MA Duration: 297 Capacity: 14 Price: 140
+Booked flight(s), reservation ID: 1
+Goodbye
+#
+|
+#
+Created user user1
+Logged in as user1
+Itinerary 0: 1 flight(s), 297 minutes
+ID: 60454 Day: 1 Carrier: AS Number: 24 Origin: Seattle WA Dest: Boston MA Duration: 297 Capacity: 14 Price: 140
+Booked flight(s), reservation ID: 2
+Goodbye
+*
+#
+create user2 user2 1000
+login user2 user2
+search "Seattle WA" "Boston MA" 1 2 1
+book 0
+quit
+*
+#
+# expected printouts for user 2
+#
+Created user user2
+Logged in as user2
+Itinerary 0: 1 flight(s), 299 minutes
+ID: 720462 Day: 2 Carrier: B6 Number: 498 Origin: Seattle WA Dest: Boston MA Duration: 299 Capacity: 18 Price: 838
+Booked flight(s), reservation ID: 2
+Goodbye
+#
+|
+#
+Created user user2
+Logged in as user2
+Itinerary 0: 1 flight(s), 299 minutes
+ID: 720462 Day: 2 Carrier: B6 Number: 498 Origin: Seattle WA Dest: Boston MA Duration: 299 Capacity: 18 Price: 838
+Booked flight(s), reservation ID: 1
+Goodbye
+*

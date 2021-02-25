@@ -1,0 +1,61 @@
+/************ data model **************/
+.symbol_type PersonType
+.symbol_type DescriptionType
+
+.decl person(name:PersonType, description:DescriptionType)
+.input person(filename="DATA/person.facts")
+
+.decl female(name:PersonType)
+.input female(filename="DATA/female.facts")
+
+.decl male(name:PersonType)
+.input male(filename="DATA/male.facts")
+
+.decl parent_child(p1:PersonType, p2:PersonType)
+.input parent_child(filename="DATA/parent_child.facts")
+
+.decl person_living(p:PersonType)
+.input person_living(filename="DATA/person_living.facts")
+
+/************* problem 0 **************/
+/**** Find all children of Priscilla ****/
+.decl p0(x:PersonType, d:DescriptionType)
+.output p0(filename="hw4-0.ans")
+
+// NOTE: if you want to redirect the output to console
+// you can use the syntax:
+.output p0(IO=stdout)
+p0(x,d) :- parent_child("Priscilla",x), person(x,d).
+
+// NOTE: DO NOT remove the declarations or the .output statements below.
+// you can ignore any "No rules/facts defined for relation" warnings when you
+// have not defined the rules for those relations
+/************* problem 1 **************/
+.decl p1(x:PersonType,d:DescriptionType)
+
+.output p1(filename="hw4-1.ans")
+.output p1(IO=stdout)
+
+/************* problem 2 **************/
+.decl p2(x:PersonType, d:DescriptionType, m:number)
+
+.output p2(filename="hw4-2.ans")
+.output p2(IO=stdout)
+
+/************* problem 3 **************/
+.decl p3(x:PersonType, m1:number, m2:number)
+
+.output p3(filename="hw4-3.ans")
+.output p3(IO=stdout)
+
+/************* problem 4 **************/
+.decl p4(x:PersonType)
+
+.output p4(filename="hw4-4.ans")
+.output p4(IO=stdout)
+
+/************* problem 5 **************/
+.decl p5(x:PersonType)
+
+.output p5(filename="hw4-5.ans")
+.output p5(IO=stdout)

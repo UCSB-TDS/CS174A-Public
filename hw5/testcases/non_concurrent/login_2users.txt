@@ -1,0 +1,20 @@
+# This tests one user trying to login to account, then trying to login again 
+# (making sure errors properly when user is already logged in)
+#
+# user 
+create me hi 10
+login me hi
+create you yo 100
+login you yo
+quit
+*
+#
+# expected printouts for you
+#
+#
+Created user me
+Logged in as me
+Created user you
+User already logged in
+Goodbye
+*

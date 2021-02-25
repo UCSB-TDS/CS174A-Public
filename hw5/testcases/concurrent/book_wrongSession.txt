@@ -1,0 +1,40 @@
+# Two terminals attempt to create user1 then book a flight. One of the two
+# terminals will succeed in user creation, both should succeed in logging in.
+# Terminal 1
+create user1 user1 10000
+login user1 user1
+search "Seattle WA" "Boston MA" 1 1 1
+quit
+*
+# Terminal 1 suceeds in user creation
+Created user user1
+Logged in as user1
+Itinerary 0: 1 flight(s), 297 minutes
+ID: 60454 Day: 1 Carrier: AS Number: 24 Origin: Seattle WA Dest: Boston MA Duration: 297 Capacity: 14 Price: 140
+Goodbye
+|
+# Terminal 1 fails to create user as Terminal 2 already has
+Failed to create user
+Logged in as user1
+Itinerary 0: 1 flight(s), 297 minutes
+ID: 60454 Day: 1 Carrier: AS Number: 24 Origin: Seattle WA Dest: Boston MA Duration: 297 Capacity: 14 Price: 140
+Goodbye
+*
+# Terminal 2
+create user1 user1 10000
+login user1 user1
+book 0
+quit
+*
+# Terminal 2 suceeds in user creation
+Failed to create user
+Logged in as user1
+No such itinerary 0
+Goodbye
+|
+# Terminal 2 fails to create user as Terminal 1 already has
+Created user user1
+Logged in as user1
+No such itinerary 0
+Goodbye
+*
