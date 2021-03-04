@@ -56,7 +56,8 @@ CREATE TABLE Itineraries(
 CREATE TABLE Reservations(
     rid INT,
     price INT,
-    fid INT,
+    fid1 INT,
+    fid2 INT,
     paid INT,
     canceled INT,
     username VARCHAR(256),
