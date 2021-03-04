@@ -14,7 +14,7 @@ Instructions assume you are on the Linux or MacOS platform.
 
 ** Due date:**
 
-Thursday, March 9, 2021, at 11pm PDT. Turn in your solution to GradeScope
+Tuesday, March 9, 2021, at 11pm PDT. Turn in your solution to GradeScope
 
 
 
