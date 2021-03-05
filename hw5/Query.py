@@ -52,7 +52,7 @@ class Query:
     CREATE_CUSTOMER_SQL = "INSERT INTO Customers VALUES('{}', '{}', {})"
 
 
-    CHECK_FLIGHT_DAY = "SELECT * FROM Reservations r, Flights f WHERE r.username = '{}' AND f.day_of_month = {} AND r.fid = f.fid"
+    CHECK_FLIGHT_DAY = "SELECT * FROM Reservations r, Flights f WHERE r.username = '{}' AND f.day_of_month = {} AND r.fid1 = f.fid"
     CHECK_FLIGHT_CAPACITY = "SELECT capacity FROM Flights WHERE fid = {}"
     CHECK_BOOKED_SEATS = "SELECT COUNT(*) AS cnt FROM Reservations WHERE fid = {}"
     CLEAR_DB_SQL1 = "DELETE FROM Reservations;"
