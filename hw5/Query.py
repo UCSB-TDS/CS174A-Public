@@ -54,7 +54,7 @@ class Query:
 
     CHECK_FLIGHT_DAY = "SELECT * FROM Reservations r, Flights f WHERE r.username = '{}' AND f.day_of_month = {} AND r.fid1 = f.fid"
     CHECK_FLIGHT_CAPACITY = "SELECT capacity FROM Flights WHERE fid = {}"
-    CHECK_BOOKED_SEATS = "SELECT COUNT(*) AS cnt FROM Reservations WHERE fid = {}"
+    CHECK_BOOKED_SEATS = "SELECT COUNT(*) AS cnt FROM Reservations WHERE fid1 = {} or fid2 = {}"
     CLEAR_DB_SQL1 = "DELETE FROM Reservations;"
     CLEAR_DB_SQL2 = "DELETE FROM Customers;"
     CLEAR_DB_SQL3 = "UPDATE ReservationsId SET rid = 1;"
@@ -375,7 +375,7 @@ class Query:
         #a helper function that you will use to implement previous functions
         
         capacity = self.conn.cursor().execute(self.CHECK_FLIGHT_CAPACITY.format(fid)).fetchone()[0]
-        booked_seats = self.conn.cursor().execute(self.CHECK_BOOKED_SEATS.format(fid)).fetchone()[0]
+        booked_seats = self.conn.cursor().execute(self.CHECK_BOOKED_SEATS.format(fid, fid)).fetchone()[0]
         #print("Checking booked/capacity {}/{}".format(booked_seats, capacity))
         return booked_seats >= capacity
 
