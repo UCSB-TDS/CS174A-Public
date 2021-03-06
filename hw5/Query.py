@@ -367,7 +367,7 @@ class Query:
         #a helper function that you will use to implement previous functions
         result = self.conn.cursor().execute(self.CHECK_FLIGHT_CAPACITY.format(fid)).fetchone()
         if(result != None):
-            return result[16]
+            return result[0]
         else:
             return 0
 
