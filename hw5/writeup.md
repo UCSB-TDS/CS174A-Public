@@ -8,7 +8,7 @@ To learn how to use SQLite from within python.
 * [SQLite](https://www.sqlite.org/index.html) through [Python apsw library](https://rogerbinns.github.io/apsw/index.html)
 * starter code files
 
-Instructions assume you are on the Linux or MacOS platform.
+Instructions assume you are on the Linux or MacOS platform. Please do not run `grading.py` on Windows. Our grading script is not compatible with Windows system.
 
 **Assigned date:** Feb 25th, 2021
 
