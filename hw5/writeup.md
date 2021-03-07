@@ -33,7 +33,6 @@ In this homework, you have two main tasks:
 * Design a database of your customers and the flights they book
 * Complete a working prototype of your flight booking application that connects to the SQLite database then allows customers to use a CLI to search, book, cancel, etc. flights
 
-You will also be writing a few test cases and explaining your design in a short writeup.
 We have already provided code for a UI (`FlightService.py`) and partial backend (`Query.py`).
 For this homework, your task is to implement the rest of the backend.
 In real life, you would develop a web-based interface instead of a CLI, but we use a CLI to simplify this homework.

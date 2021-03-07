@@ -87,7 +87,7 @@ class Query:
             open(DB_NAME, 'w').close()
             os.system("chmod 777 {}".format(DB_NAME))
             #remove old db file
-
+            # TODO use sqlite3 example.db < create_tables.sql to reconstruct the db file. This can save many lines of code.
             # I have to reconstruct the db before each test
             self.conn = apsw.Connection(self.db_name, statementcachesize=0)
 
@@ -381,7 +381,6 @@ class Query:
 
 
     def checkFlightSameDay(self, username, dayOfMonth):
-        #TODO your code here
         result = self.conn.cursor().execute(self.CHECK_FLIGHT_DAY.format(username, dayOfMonth)).fetchall()
         if(len(result) == 0):
             #have not found there are multiple flights on the specific day by current user.
