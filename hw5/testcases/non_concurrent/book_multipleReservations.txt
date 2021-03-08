@@ -1,0 +1,19 @@
+# Tests booking multiple reservations (on different days)
+create user user 500
+login user user
+search "Seattle WA" "Boston MA" 1 1 1
+book 0
+search "New York NY" "Portland OR" 1 2 1
+book 0
+quit
+*
+Created user user
+Logged in as user
+Itinerary 0: 1 flight(s), 297 minutes
+ID: 60454 Day: 1 Carrier: AS Number: 24 Origin: Seattle WA Dest: Boston MA Duration: 297 Capacity: 14 Price: 140
+Booked flight(s), reservation ID: 1
+Itinerary 0: 1 flight(s), 346 minutes
+ID: 749039 Day: 2 Carrier: DL Number: 2303 Origin: New York NY Dest: Portland OR Duration: 346 Capacity: 2 Price: 248
+Booked flight(s), reservation ID: 2
+Goodbye
+*
