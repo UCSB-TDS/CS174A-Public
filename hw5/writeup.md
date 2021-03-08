@@ -94,7 +94,7 @@ The following are the functional specifications for the flight service system, t
     * direct=1: return up to n direct itineraries
     * direct=0: return up to n direct itineraries. If there are only k direct itineraries (where k < n), then return the k direct itineraries and up to (n-k) of the shortest indirect itineraries with the flight times. For one-hop flights, different carriers can be used for the flights. For the purpose of this assignment, an indirect itinerary means the first and second flight only must be on the same date (i.e., if flight 1 runs on the 3rd day of July, flight 2 runs on the 4th day of July, then you can't put these two flights in the same itinerary as they are not on the same day).
 
-  <br />Sort your results. In all cases, the returned results should be primarily sorted on total actual_time (ascending). If a tie occurs, break that tie by the fid value. Use the first then the second fid for tie-breaking.
+  <br />Sort your results. In all cases, the returned results should be primarily sorted on total actual_time (ascending. There could be some indirect flights have less total travel time less than the direct flight). If a tie occurs, break that tie by the fid value. Use the first then the second fid for tie-breaking.
 
     Below is an example of a single direct flight from Seattle to Boston. Actual itinerary numbers might differ, notice that only the day is printed out since we assume all flights happen in July 2015:
 
